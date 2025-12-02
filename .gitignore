@@ -33,3 +33,10 @@ htmlcov/
 # Logs
 *.log
 npm-debug.log*
+
+# Docker
+exports/
+
+# Environment
+.env
+!.env.example
