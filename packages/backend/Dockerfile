@@ -1,16 +1,16 @@
 # Build stage
-FROM python:3.12-slim as builder
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Copy dependency files
-COPY pyproject.toml uv.lock ./
+# Copy dependency files and README (required by hatchling)
+COPY pyproject.toml uv.lock README.md ./
 
-# Install dependencies
-RUN uv sync --frozen --no-dev
+# Install dependencies only (not the package itself)
+RUN uv sync --frozen --no-dev --no-install-project
 
 # Runtime stage
 FROM python:3.12-slim

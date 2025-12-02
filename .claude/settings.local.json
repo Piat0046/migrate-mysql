@@ -15,7 +15,9 @@
       "Bash(git config:*)",
       "Bash(gh repo create:*)",
       "Bash(gh issue create:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(npx @anthropic-ai/claude-code mcp add playwright:*)",
+      "Bash(npx @anthropic-ai/claude-code mcp list:*)"
     ],
     "deny": [],
     "ask": []
