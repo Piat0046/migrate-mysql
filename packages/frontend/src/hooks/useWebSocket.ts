@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { WSStatusMessage } from '../types'
 
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
+const WS_URL = import.meta.env.VITE_WS_URL || `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
 
 interface WebSocketState {
   status: string
